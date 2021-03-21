@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "",
+      title: "demo",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         body: Container(
           child: CustomPaint(
             painter: DemoPainter(),
-            child: Container(),
+            child: Container(child: Text("kjncjkdjkvmkmvkdmvk"),),
           ),
         ),
       ),
