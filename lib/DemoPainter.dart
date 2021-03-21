@@ -11,31 +11,32 @@ class DemoPainter extends CustomPainter {
    //    ..style = PaintingStyle.fill;
    //  //a circle
    //  canvas.drawCircle(Offset(200, 200), 100, paint1);
-    drawCircles(canvas,size,1000);
+    double distance = 0.0;
+    List<Color> colors =  [];
+    colors.add(Colors.greenAccent);colors.add(Colors.lightGreenAccent);
+    colors.add(Colors.deepOrangeAccent);colors.add(Colors.indigo);colors.add(Colors.lightGreenAccent);
+    Color c = colors[Random().nextInt(colors.length)];
+    for (double i = 0; i < 1000; i = i + 0.001) {
+      canvas.drawCircle(Offset((size.width)+(distance*atan(distance)*sin(distance)*cos(distance)),
+        (size.width)+(distance*cos(distance)*sin(distance)*tan(distance)),),
+        10.0-(0.5 * (i)), Paint()..color = Colors.green,);
+      distance = distance + (0.12 + (0.6 * i));
+
+      canvas.drawCircle(Offset((size.width/2)+(distance*atan(distance)*sin(distance)*cos(distance)),
+        (size.width/2)+(distance*cos(distance)*sin(distance)*tan(distance)),),
+        4.0-(0.5 * (i)), Paint()..color = Colors.yellowAccent,);
+      distance = distance + (0.12 + (0.6 * i));
+
+      canvas.drawCircle(Offset((size.width/8)+(distance*atan(distance)*sin(distance)*cos(distance)),
+        (size.width/8)+(distance*cos(distance)*sin(distance)*tan(distance)),),
+        2.0-(0.5 * (i)), Paint()..color = Colors.deepOrangeAccent,);
+      distance = distance + (0.12 + (0.6 * i));
+    }
   }
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
     return false;
-  }
-
-  void drawCircles(Canvas canvas, Size size, int index) {
-    if (index == 0) {
-      return;
-    }
-    double distance = 0.0;
-    List<Color> colors =  [];
-    colors.add(Colors.greenAccent);colors.add(Colors.lightGreenAccent);
-    colors.add(Colors.deepOrangeAccent);colors.add(Colors.indigo);colors.add(Colors.lightGreenAccent);
-
-    Color c = colors[Random().nextInt(colors.length)];
-    for (double i = 0; i < 1000; i = i + 0.01) {
-      canvas.drawCircle(Offset((size.width/5)+(distance*atan(distance)*sin(distance)*cos(distance)),
-        (size.width/5)+(distance*cos(distance)*sin(distance)*tan(distance)),),
-        5.0-(0.5 * (i)), Paint()..color = c,);
-      distance = distance + (0.2 + (0.1 * i + 20));
-    }
-    drawCircles(canvas, size, index-1);
   }
 
 }
