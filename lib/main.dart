@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         body: Container(
           child: CustomPaint(
             painter: DemoPainter(),
-            child: Container(child: Text("kjncjkdjkvmkmvkdmvk"),),
+            child: Container(),
           ),
         ),
       ),
