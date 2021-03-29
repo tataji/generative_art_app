@@ -30,7 +30,7 @@ class DemoPainter extends CustomPainter {
       canvas.drawCircle(Offset((size.width/8)+(distance*atan(distance)*sin(distance)*cos(distance)),
         (size.width/8)+(distance*cos(distance)*sin(distance)*tan(distance)),),
         2.0-(0.5 * (i)), Paint()..color = Colors.deepOrangeAccent,);
-      distance = distance + (0.12 + (0.6 * i));
+      distance = distance + (0.12 + (2 * i));
     }
   }
 
